@@ -10,7 +10,7 @@ gedd "pattern"
 The pattern is not case sensitive. The shell pattern matching is used featuring the following symbols: 
 ```
 *?[^-]\
-```.
+```
 
 ####Installation
 
