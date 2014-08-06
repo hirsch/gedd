@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"path/filepath"
 	"time"
+	"strings"
 )
 
 var (
@@ -24,13 +25,14 @@ type DirEntry struct {
 
 // lookup prints all filenames matching the pattern
 func lookup(data []*DirEntry, query string) {
+	query = strings.ToLower(query)
 	elapsedTime := time.Now()
 	results := 0
 	checked := 0
 
 	for _, dir := range data {
 
-		match, err := filepath.Match(query, filepath.Base(dir.Path))
+		match, err := filepath.Match(query, strings.ToLower(filepath.Base(dir.Path)))
 		fatal(err)
 		if match {
 			fmt.Println(blue + dir.Path + string(filepath.Separator) + reset)
@@ -39,7 +41,7 @@ func lookup(data []*DirEntry, query string) {
 		checked++
 
 		for _, file := range dir.Files {
-			match, err := filepath.Match(query, file.Name)
+			match, err := filepath.Match(query, strings.ToLower(file.Name))
 			fatal(err)
 			if match {
 				fmt.Println(filepath.Join(dir.Path, red+file.Name+reset))
