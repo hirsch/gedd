@@ -7,8 +7,9 @@ gedd searches for matching files in a fedd index.
 ```
 gedd "pattern"
 ```
-The pattern is not case sensitive. The shell pattern matching is used featuring the following symbols: ```
-*?[^-]
+The pattern is not case sensitive. The shell pattern matching is used featuring the following symbols: 
+```
+*?[^-]\
 ```.
 
 ####Installation
