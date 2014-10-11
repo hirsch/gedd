@@ -16,7 +16,7 @@ The pattern is not case sensitive. The shell pattern matching is used featuring 
 
 You can either use
 ```
-go get https://github.com/hirsch/gedd
+go get github.com/hirsch/gedd
 ```
 or download it and navigate to the directory followed by
 ```
